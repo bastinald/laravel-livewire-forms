@@ -1,0 +1,38 @@
+<?php
+
+namespace [namespace];
+
+use Bastinald\LaravelLivewireForms\Components\Button;
+use Bastinald\LaravelLivewireForms\Components\FormComponent;
+use Bastinald\LaravelLivewireForms\Components\Input;
+
+class [class] extends FormComponent
+{
+    public function fields()
+    {
+        return [
+            Input::make('name', 'Name'),
+        ];
+    }
+
+    public function buttons()
+    {
+        return [
+            Button::make()->click('submit'),
+        ];
+    }
+
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+        ];
+    }
+
+    public function submit()
+    {
+        $this->validate();
+
+        // [quote]
+    }
+}

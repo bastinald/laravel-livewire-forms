@@ -1,0 +1,29 @@
+{
+    "name": "bastinald/laravel-livewire-forms",
+    "homepage": "https://github.com/bastinald/laravel-livewire-forms",
+    "description": "Laravel Livewire form component with declarative Bootstrap 5 fields and buttons.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Dion",
+            "email": "bastinald@icloud.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^8.0",
+        "livewire/livewire": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bastinald\\LaravelLivewireForms\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bastinald\\LaravelLivewireForms\\Providers\\LaravelLivewireFormsProvider"
+            ]
+        }
+    }
+}
