@@ -13,14 +13,14 @@
     <div class="list-group">
         @foreach($this->data($name, []) as $key => $value)
             <div class="list-group-item {{ $hasErrors ? 'border-danger' : '' }}">
-                <div class="row gx-2">
+                <div class="row align-items-center gx-3">
                     @foreach($props['fields'] as $field)
                         <div class="col-md mb-2 mb-md-0">
                             {{ $field->prefix($name . '.' . $key)->render()->with($field->data()) }}
                         </div>
                     @endforeach
-                    <div class="col-md-auto mt-md-2">
-                        <button type="button" class="btn-close p-0"
+                    <div class="col-md-auto">
+                        <button type="button" class="btn-close px-0"
                             wire:click="removeArrayableItem('{{ $name . '.' . $key }}')">
                         </button>
                     </div>
