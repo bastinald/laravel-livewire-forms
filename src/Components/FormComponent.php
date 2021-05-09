@@ -8,15 +8,14 @@ use Livewire\Component;
 
 class FormComponent extends Component
 {
-    protected $title;
-    protected $layout;
+    public $title;
+    public $layout;
     public $data = [];
 
     public function render()
     {
-        return view('laravel-livewire-forms::form-component', [
-            'title' => $this->title ?? preg_replace('/(.)(?=[A-Z])/u', '$1 ', class_basename($this)),
-        ])->layout($this->layout ?? config('livewire.layout'));
+        return view('laravel-livewire-forms::form-component')
+            ->layout($this->layout ?? config('livewire.layout'));
     }
 
     public function data($key, $default = null)

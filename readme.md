@@ -77,12 +77,13 @@ public function createUser()
 
 ## Full Page Forms
 
-Create a full page form by specifying a `layout` view and `route` to use:
+Create a full page form by specifying a `title`, `layout` and `route` to use:
 
 ```php
 class Login extends FormComponent
 {
-    protected $layout = 'layouts.guest';
+    public $title = 'Login';
+    public $layout = 'layouts.guest';
 
     public function route()
     {
