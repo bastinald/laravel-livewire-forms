@@ -151,6 +151,20 @@ Input::make('name', 'Name')->help('Please tell us your name!'),
 
 ## Available Fields
 
+### Alert `($message, $style = 'success')`
+
+An alert box.
+
+```php
+Alert::make('It worked!'),
+Alert::make('Something bad happened.', 'danger'),
+Alert::make('Something else happened.')->dismissible(),
+```
+
+The `$style` parameter accepts a bootstrap alert style e.g. `success`, `danger`, `primary`, etc. Use the `dismissible` method to make the alert dismissible.
+
+Available methods: `dismissible`
+
 ### Arrayable `($name, $label = null)`
 
 An array of fields.
