@@ -10,6 +10,7 @@ class FormComponent extends Component
 {
     public $title;
     public $layout;
+    public $container;
     public $data = [];
 
     public function render()

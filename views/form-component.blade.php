@@ -1,11 +1,15 @@
 @section('title', __($title))
 
 <form>
-    @foreach($this->fields() as $field)
-        {{ $field->render()->with($field->data()) }}
-    @endforeach
+    <div class="pb-0 {{ $container ? $container . '-body' : '' }}">
+        @foreach($this->fields() as $field)
+            {{ $field->render()->with($field->data()) }}
+        @endforeach
+    </div>
 
-    @foreach($this->buttons() as $button)
-        {{ $button->render()->with($button->data()) }}
-    @endforeach
+    <div class="text-end {{ $container ? $container . '-footer' : '' }}">
+        @foreach($this->buttons() as $button)
+            {{ $button->render()->with($button->data()) }}
+        @endforeach
+    </div>
 </form>

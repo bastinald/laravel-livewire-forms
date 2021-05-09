@@ -95,6 +95,20 @@ class Login extends FormComponent
 
 The `route` method is made available by using my [laravel-livewire-routes](https://github.com/bastinald/laravel-livewire-routes) package.
 
+## Containers
+
+If your form is showing inside a card or a modal, you can specify the container via the `$container` property:
+
+```php
+class Login extends FormComponent
+{
+    public $title = 'Login';
+    public $layout = 'layouts.guest';
+    public $container = 'card';
+```
+
+This will wrap the fields inside of `$container-body` and the buttons inside of `$container-footer`.
+
 ## Data Binding
 
 Most fields allow you to change the way livewire binds data via helper methods that are chained to fields e.g.:
