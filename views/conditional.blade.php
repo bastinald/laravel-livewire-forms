@@ -3,5 +3,6 @@
         @foreach($condition[1] as $field)
             {{ $field->render()->with($field->data()) }}
         @endforeach
+        @break
     @endif
 @endforeach
