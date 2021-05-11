@@ -109,6 +109,29 @@ class Login extends FormComponent
 
 This will wrap the fields inside of `$container-body` and the buttons inside of `$container-footer`.
 
+## Setting Initial Data
+
+You can set the initial form data / defaults via the `data` array property in your component `mount` method:
+
+```php
+class UpdateUserForm extends FormComponent
+{
+    public $title = 'Login';
+    public $layout = 'layouts.auth';
+    
+    public function route()
+    {
+        return Route::get('/users/update/{user}', static::class)
+            ->name('users.update')
+            ->middleware('auth');
+    }
+    
+    public function mount(User $user)
+    {
+        $this->data = $user->toArray();
+    }
+```
+
 ## Data Binding
 
 Most fields allow you to change the way livewire binds data via helper methods that are chained to fields e.g.:
