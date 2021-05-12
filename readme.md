@@ -117,6 +117,21 @@ class UpdateUserForm extends FormComponent
     }
 ```
 
+## Accessing Data
+
+Use the `data` method in the component to access current form data (you can use dot notation for array values):
+
+```php
+public function createUser()
+{
+    User::create([
+        'name' => $this->data('name'),
+        'email' => $this->data('email'),
+        'likes_turtles' => $this->data('answers.likes_turtles'),
+    ]);
+}
+```
+
 ## Data Binding
 
 Most fields allow you to change the way livewire binds data via helper methods that are chained to fields e.g.:
