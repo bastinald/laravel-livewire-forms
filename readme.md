@@ -58,7 +58,7 @@ public function rules()
 }
 ```
 
-Declare an action:
+Declare an action (notice the use of `->click('createUser')` in the button example above:
 
 ```php
 public function createUser()
@@ -83,7 +83,7 @@ Create a full page form by specifying a `title`, `layout` and `route` to use:
 class Login extends FormComponent
 {
     public $title = 'Login';
-    public $layout = 'layouts.guest';
+    public $layout = 'layouts.card';
 
     public function route()
     {
@@ -95,20 +95,6 @@ class Login extends FormComponent
 
 The `route` method is made available by using my [laravel-livewire-routes](https://github.com/bastinald/laravel-livewire-routes) package.
 
-## Containers
-
-If your form is showing inside a card or a modal, you can specify the container via the `$container` property:
-
-```php
-class Login extends FormComponent
-{
-    public $title = 'Login';
-    public $layout = 'layouts.guest';
-    public $container = 'card';
-```
-
-This will wrap the fields inside of `$container-body` and the buttons inside of `$container-footer`.
-
 ## Setting Initial Data
 
 You can set the initial form data / defaults via the `data` array property in your component `mount` method:
@@ -116,8 +102,7 @@ You can set the initial form data / defaults via the `data` array property in yo
 ```php
 class UpdateUserForm extends FormComponent
 {
-    public $title = 'Login';
-    public $layout = 'layouts.auth';
+    public $title = 'Update User';
     
     public function route()
     {
