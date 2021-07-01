@@ -1,4 +1,10 @@
-# Laravel Livewire Forms
+# No Longer Maintained
+
+Check out my new UI, Auth, & CRUD scaffolding here: https://github.com/bastinald/laravel-livewire-ui
+
+---
+
+## Laravel Livewire Forms
 
 Laravel Livewire form component with declarative Bootstrap 5 fields and buttons.
 
