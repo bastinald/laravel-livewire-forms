@@ -1,6 +1,6 @@
 @section('title', __($title))
 
-<form>
+<form  class="{{ $gridClass }}" >
     @foreach($this->fields() as $field)
         {{ $field->render()->with($field->data()) }}
     @endforeach

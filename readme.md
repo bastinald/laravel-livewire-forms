@@ -227,7 +227,7 @@ Checkbox::make('active', 'This user is active')->switch(),
 
 Use the `switch` method to style the checkbox as a switch.
 
-Available methods: `switch`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`
+Available methods: `switch`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`
 
 ### Checkboxes `($name, $label = null)`
 
@@ -237,7 +237,7 @@ An array of checkbox fields.
 Checkboxes::make('colors', 'Colors')->options(['Red', 'Green', 'Blue']),
 ```
 
-Available methods: `options`, `switch`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`
+Available methods: `options`, `switch`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`
 
 ### Color `($name, $label = null)`
 
@@ -247,7 +247,7 @@ A color picker field.
 Color::make('hair_color', 'Hair Color'),
 ```
 
-Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`
+Available methods: `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`
 
 ### Conditional
 
@@ -303,7 +303,7 @@ Input::make('price', 'Price')->type('number')->append('$')->prepend('.00'),
 
 The `type` method accepts a standard HTML input type. As with other inputs, use `small` or `large` to resize an input. Input fields also support appends/prepends, and even plaintext.
 
-Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `type`, `append`, `prepend`, `plaintext`
+Available methods: `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `type`, `append`, `prepend`, `plaintext`
 
 ### Radio `($name, $label = null)`
 
@@ -313,7 +313,7 @@ A radio field.
 Radio::make('gender', 'Gender')->options(['Male', 'Female']),
 ```
 
-Available methods: `options`, `switch`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`
+Available methods: `options`, `switch`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`
 
 ### Select `($name, $label = null)`
 
@@ -329,7 +329,7 @@ Select::make('color', 'Color')->options([
 Select::make('user_id', 'User')->options(User::pluck('name', 'id')->toArray()),
 ```
 
-Available methods: `options`, `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `placeholder`
+Available methods: `options`, `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `placeholder`
 
 ### Textarea `($name, $label = null)`
 
@@ -340,7 +340,7 @@ Input::make('bio', 'Biography'),
 Input::make('bio', 'Biography')->rows(5),
 ```
 
-Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `rows`
+Available methods: `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `rows`
 
 ### View `($name, $data = [])`
 
@@ -348,4 +348,3 @@ Used to render a custom Blade view inside the form.
 
 ```php
 View::make('custom-view', ['hello' => 'world']),
-```

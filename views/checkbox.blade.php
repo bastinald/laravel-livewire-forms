@@ -6,7 +6,7 @@
     ])->merge(array_merge($attrs, ['id' => $name]));
 @endphp
 
-<div class="form-check {{ $props['switch'] ? 'form-switch' : '' }} {{ !$props['prefix'] ? 'mb-3' : '' }}">
+<div class="form-check {{ $props['switch'] ? 'form-switch' : '' }} {{$gridClass}} {{ !$props['prefix'] ? 'mb-3' : '' }}">
     <input {{ $attributes }} wire:model{{ $props['model'] ?? '' }}="data.{{ $name }}">
 
     <label for="{{ $name }}" class="form-check-label">
