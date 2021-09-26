@@ -91,6 +91,27 @@ class Login extends FormComponent
             ->name('login')
             ->middleware('guest');
     }
+}
+```
+
+## Form Slider
+
+Create a form that slides out by specifying a `title`, `layout` and `route` to use:
+
+```php
+class Login extends FormSliderComponent
+{
+    public $title = 'Login';
+    public $layout = 'layouts.card';
+    public $btnText = 'Login';
+
+    public function route()
+    {
+        return Route::get('/login', static::class)
+            ->name('login')
+            ->middleware('guest');
+    }
+}
 ```
 
 The `route` method is made available by using my [laravel-livewire-routes](https://github.com/bastinald/laravel-livewire-routes) package.
@@ -115,6 +136,7 @@ class UpdateUserForm extends FormComponent
     {
         $this->data = $user->toArray();
     }
+}
 ```
 
 ## Accessing Data
@@ -422,3 +444,7 @@ class CreateClientForm extends FormComponent
 
 ![Example Form](assets/sample-form.png)
 
+
+### Other Examples
+
+For more examples, read the [example.md](examples.md) document.
