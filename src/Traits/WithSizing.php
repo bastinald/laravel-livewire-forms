@@ -9,30 +9,16 @@ trait WithSizing
      *
      * @var string
      */
-    public $gridClass = 'col-md-12';
+    public $gridClass = 'd-block w-full';
+    protected $colClasses = "col-md-6";
 
-
-    /**
-     * Set the input size to small
-     *
-     * @return mixed|Illuminate\View\Component    Return the current object.
-     */
-    public function small()
-    {
-        $this->props['small'] = true;
-
+    public function setColClass($classes="") {
+        $this->colClasses = $classes;
         return $this;
     }
 
-    /**
-     * Set the input size to large
-     *
-     * @return mixed|Illuminate\View\Component    Return the current object.
-     */
-    public function large()
-    {
-        $this->props['large'] = true;
-        return $this;
+    public function getColClass() {
+        return $this->colClasses;
     }
 
     /**
@@ -41,39 +27,9 @@ trait WithSizing
      * @param string $classes
      * @return mixed|Illuminate\View\Component    Return the current object.
      */
-    public function col_size($classes='col-md-12') {
+    public function containerSize($classes='d-block w-full') {
         $this->gridClass = $classes;
         return $this;
-    }
-
-    /**
-     * Set CSS Class for input wrapper as small.
-     *
-     * @param string $classes   Default: col-md-4 col-sm-6 col-xs-12
-     * @return mixed|Illuminate\View\Component    Return the current object.
-     */
-    public function col_sm($classes='col-md-4 col-sm-6 col-xs-12') {
-        return $this->col_size($classes);
-    }
-
-    /**
-     * Set CSS Class for input wrapper as mediun.
-     *
-     * @param string $classes   Default: col-md-4 col-sm-6 col-xs-12
-     * @return mixed|Illuminate\View\Component    Return the current object.
-     */
-    public function col_md($classes='col-md-4 col-sm-6 col-xs-12') {
-        return $this->col_size($classes);
-    }
-
-    /**
-     * Set CSS Class for input wrapper as large.
-     *
-     * @param string $classes   Default: col-md-12 col-lg-6
-     * @return mixed|Illuminate\View\Component    Return the current object.
-     */
-    public function col_lg($classes='col-md-12 col-lg-6') {
-        return $this->col_size($classes);
     }
 
 
