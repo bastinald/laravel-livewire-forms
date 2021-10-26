@@ -47,6 +47,11 @@ class Row extends Component
         return Column::class == get_class($field);
     }
 
+    public function col_size($col="mb-2") {
+        $this->column_class = "$col mb-2 mb-md-0";
+        return $this;
+    }
+
     public function render()
     {
         $row = $this;

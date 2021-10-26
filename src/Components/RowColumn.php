@@ -34,6 +34,11 @@ class RowColumn extends Component
         return $component;
     }
 
+    public function col_size($col="mb-2") {
+        $this->column_class = "$col mb-2 mb-md-0";
+        return $this;
+    }
+
     public function fields($fields = [])
     {
         $this->props['fields'] = $fields;

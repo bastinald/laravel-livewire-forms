@@ -166,16 +166,6 @@ Input::make('name', 'Name')->lazy(), // bind on change
 Input::make('name', 'Name')->debounce(500), // bind after 500ms delay 
 ```
 
-## Bootstrap Grid
-
-Many fields also allow you to specify a bootstrap column size for the input e.g.:
-
-```php
-Input::make('name', 'Name')->col_size('col-md-9'), // Update the default column size
-Input::make('name', 'Name')->col_sm(), // Update the default column size to small
-Input::make('name', 'Name')->col_md(), // Update the default column size to medium
-Input::make('name', 'Name')->col_lg(), // Update the default column size to large
-```
 
 ## Sizing
 
@@ -233,6 +223,26 @@ Arrayable::make('locations', 'Locations')->fields([
 ```
 
 Available methods: `fields`, `help`, `disabled`
+
+
+
+### Bootstrap Grid
+
+A bootstrap support to the form.
+
+#### Row `($label = null)` and RowColumn `($label = null)`
+
+An array of fields display in a Bootstrap Row or Column
+
+```php
+Row::make()->fields([
+    Input::make('city')->placeholder('City'),
+    Select::make('state')->placeholder('State')->options(['FL', 'TX']),
+]),
+```
+
+Available methods: `fields`, `help`, `disabled`, `isColumn`, `col_class`
+
 
 ### Button `($label = 'Submit', $style = 'primary')`
 
@@ -404,29 +414,23 @@ class CreateClientForm extends FormComponent
     public function fields()
     {
         return [
-            Input::make('name', 'Name')
-                ->col_md()
-                ->placeholder('Full Name'),
-            Input::make('email', 'Email')
-                ->type('email')
-                ->placeholder('Email, example: user@example.com')
-                ->col_md(),
-            Select::make('gender', 'Gender')
-                ->placeholder('Gender')
-                ->options(['Male', 'Female'])
-                ->col_md()
-                ->addAttrs(['class' => 'd-block w-full']),
-            Input::make('phone_no', 'Contact Number')
-                ->placeholder('(xxx) xxx xxxxx')
-                ->col_md(),
-            Input::make('street_address', 'Street Address')
-                ->col_md(),
-            Input::make('city', 'City')
-                ->col_md(),
-            Input::make('state', 'State / Parist')
-                ->col_md(),
-            Input::make('country', 'Country')
-                ->col_md(),
+            Row::make()->fields([
+                Input::make('name', 'Name')
+                    ->placeholder('Full Name'),
+                Input::make('email', 'Email')
+                    ->type('email')
+                    ->placeholder('Email, example: user@example.com'),
+                Select::make('gender', 'Gender')
+                    ->placeholder('Gender')
+                    ->options(['Male', 'Female'])
+                    ->addAttrs(['class' => 'd-block w-full']),
+                Input::make('phone_no', 'Contact Number')
+                    ->placeholder('(xxx) xxx xxxxx'),
+                Input::make('street_address', 'Street Address'),
+                Input::make('city', 'City'),
+                Input::make('state', 'State / Parist'),
+                Input::make('country', 'Country'),
+            ])
         ];
     }
 

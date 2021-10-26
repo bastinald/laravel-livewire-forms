@@ -19,29 +19,23 @@ class CreateClientForm extends FormComponent
     public function fields()
     {
         return [
-            Input::make('name', 'Name')
-                ->col_md()
-                ->placeholder('Full Name'),
-            Input::make('email', 'Email')
-                ->type('email')
-                ->placeholder('Email, example: user@example.com')
-                ->col_md(),
-            Select::make('gender', 'Gender')
-                ->placeholder('Gender')
-                ->options(['Male', 'Female'])
-                ->col_md()
-                ->addAttrs(['class' => 'd-block w-full']),
-            Input::make('phone_no', 'Contact Number')
-                ->placeholder('(xxx) xxx xxxxx')
-                ->col_md(),
-            Input::make('street_address', 'Street Address')
-                ->col_md(),
-            Input::make('city', 'City')
-                ->col_md(),
-            Input::make('state', 'State / Parist')
-                ->col_md(),
-            Input::make('country', 'Country')
-                ->col_md(),
+            Row::make()->fields([
+                Input::make('name', 'Name')
+                    ->placeholder('Full Name'),
+                Input::make('email', 'Email')
+                    ->type('email')
+                    ->placeholder('Email, example: user@example.com'),
+                Select::make('gender', 'Gender')
+                    ->placeholder('Gender')
+                    ->options(['Male', 'Female'])
+                    ->addAttrs(['class' => 'd-block w-full']),
+                Input::make('phone_no', 'Contact Number')
+                    ->placeholder('(xxx) xxx xxxxx'),
+                Input::make('street_address', 'Street Address'),
+                Input::make('city', 'City'),
+                Input::make('state', 'State / Parist'),
+                Input::make('country', 'Country'),
+            ])
         ];
     }
 
