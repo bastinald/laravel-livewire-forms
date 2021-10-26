@@ -6,7 +6,7 @@
     ]);
 @endphp
 
-<div class="{{ !$props['prefix'] ? 'mb-3' : '' }}">
+<div class="{{$gridClass}} {{ !$props['prefix'] ? 'mb-3' : '' }}">
     @isset($props['label'])
         <label class="form-label">
             {{ __($props['label']) }}

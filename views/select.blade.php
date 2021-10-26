@@ -8,7 +8,7 @@
     ])->merge(array_merge($attrs, ['id' => $name]));
 @endphp
 
-<div class="{{ !$props['prefix'] ? 'mb-3' : '' }}">
+<div class="{{$gridClass}} {{ !$props['prefix'] ? 'mb-3' : '' }}">
     @isset($props['label'])
         <label for="{{ $name }}" class="form-label">
             {{ __($props['label']) }}

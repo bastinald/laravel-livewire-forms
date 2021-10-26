@@ -20,8 +20,9 @@
                         </div>
                     @endforeach
                     <div class="col-md-auto">
-                        <button type="button" class="btn-close px-0"
+                        <button type="button" class="btn-close px-2 btn-danger"
                             wire:click="removeArrayableItem('{{ $name . '.' . $key }}')">
+                            X
                         </button>
                     </div>
                 </div>
