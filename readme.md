@@ -336,8 +336,8 @@ Available methods: `options`, `small`, `large`, `help`, `instant`, `defer`, `laz
 A textarea field.
 
 ```php
-Input::make('bio', 'Biography'),
-Input::make('bio', 'Biography')->rows(5),
+Textarea::make('bio', 'Biography'),
+Textarea::make('bio', 'Biography')->rows(5),
 ```
 
 Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `rows`
